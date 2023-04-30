@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Vote_Application_JonathanMutala.Models;
 
 namespace Vote_Application_JonathanMutala.Controllers
 {
@@ -16,9 +17,16 @@ namespace Vote_Application_JonathanMutala.Controllers
         }
 
 
+        [HttpGet]
         public async Task<IActionResult> Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login( User userModel )
+        {
+            return View(userModel);
         }
     }
 }
