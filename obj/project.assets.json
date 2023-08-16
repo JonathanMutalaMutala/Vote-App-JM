@@ -10571,23 +10571,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Simon Mutala\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\jonat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Simon Mutala\\Desktop\\ASP.Net core\\Vote-Application_JonathanMutala\\Vote-Application_JonathanMutala.csproj",
+      "projectUniqueName": "C:\\Users\\jonat\\Source\\Repos\\Vote-App-JM\\Vote-Application_JonathanMutala.csproj",
       "projectName": "Vote-Application_JonathanMutala",
-      "projectPath": "C:\\Users\\Simon Mutala\\Desktop\\ASP.Net core\\Vote-Application_JonathanMutala\\Vote-Application_JonathanMutala.csproj",
-      "packagesPath": "C:\\Users\\Simon Mutala\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Simon Mutala\\Desktop\\ASP.Net core\\Vote-Application_JonathanMutala\\obj\\",
+      "projectPath": "C:\\Users\\jonat\\Source\\Repos\\Vote-App-JM\\Vote-Application_JonathanMutala.csproj",
+      "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jonat\\Source\\Repos\\Vote-App-JM\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Simon Mutala\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10595,8 +10591,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.telerik.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -10660,7 +10655,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.300-preview.23179.2\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400-preview.23274.1\\RuntimeIdentifierGraph.json"
       }
     }
   }
