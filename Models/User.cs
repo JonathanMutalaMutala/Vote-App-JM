@@ -18,9 +18,5 @@ namespace Vote_Application_JonathanMutala.Models
         public string LastName { get; set; }
        
         public bool IsActive { get; set; }
-      
-
-
-
     }
 }
