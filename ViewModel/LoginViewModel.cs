@@ -25,6 +25,10 @@ namespace Vote_Application_JonathanMutala.ViewModel
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        public string? ConfirmPassword { get; set; }
+
         public bool RememberMe { get; set; }
+        public string? ReturnUrl { get; set; }
+
     }
 }
