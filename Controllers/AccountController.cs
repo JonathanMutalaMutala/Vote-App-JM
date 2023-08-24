@@ -43,6 +43,12 @@ namespace Vote_Application_JonathanMutala.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginViewModel )
         {
+            var result = await _signInManager.PasswordSignInAsync(loginViewModel.Email, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: false);
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("User logged in.");
+                return RedirectToAction("Index", "Home");
+            }
             return View(loginViewModel);
         }
 
