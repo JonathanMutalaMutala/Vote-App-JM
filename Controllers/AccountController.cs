@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Vote_Application_JonathanMutala.Data;
@@ -7,6 +8,7 @@ using Vote_Application_JonathanMutala.ViewModel;
 
 namespace Vote_Application_JonathanMutala.Controllers
 {
+  
     public class AccountController : Controller
     {
 
@@ -50,11 +52,28 @@ namespace Vote_Application_JonathanMutala.Controllers
             if (result.Succeeded)
             {
                 _logger.LogInformation("User logged in.");
-                return RedirectToAction("Index", "Home");
+                //return RedirectToAction("Index", "Home");
+                
             }
             
             return View(loginViewModel);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> LogOut(string returnUrl = null)
+        {
+            await _signInManager.SignOutAsync();
+            if(returnUrl != null)
+            {
+                return LocalRedirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
+
+
 
         [HttpGet]
         public async Task<IActionResult> Register()
