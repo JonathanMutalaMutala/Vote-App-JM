@@ -43,12 +43,16 @@ namespace Vote_Application_JonathanMutala.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginViewModel )
         {
-            var result = await _signInManager.PasswordSignInAsync(loginViewModel.Email, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: false);
+           IdentityUser currentUser = await _userManager.FindByEmailAsync( loginViewModel.Email );
+
+            var result = await _signInManager.PasswordSignInAsync(currentUser, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: true);
+
             if (result.Succeeded)
             {
                 _logger.LogInformation("User logged in.");
                 return RedirectToAction("Index", "Home");
             }
+            
             return View(loginViewModel);
         }
 
@@ -62,21 +66,29 @@ namespace Vote_Application_JonathanMutala.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(LoginViewModel loginViewModel)
         {
+
             var userInfo = new IdentityUser
             {
                 Email = loginViewModel.Email,
-                UserName = "Jmutala",
+                UserName = loginViewModel.UserName,
             };
 
-            var userResult = await _userManager.CreateAsync(userInfo,loginViewModel.Password);
+            var userResult = await _userManager.CreateAsync(userInfo,loginViewModel.Password); // Permet de crée un utilisateur 
 
             if(userResult.Succeeded)
             {
-                var SignInResult = await _signInManager.PasswordSignInAsync(userInfo, loginViewModel.Password, false, false);
+                await _signInManager.SignInAsync(userInfo, isPersistent: false);
+                return RedirectToAction("Index", "Home"); // Redirige ver la page de connexion 
             }
 
+            //foreach (var item in userResult.Errors)
+            //{
+            //    ModelState.AddModelError(string.Empty, item.Description);
+            //}
 
-            return RedirectToAction("Index","Home");
+
+            return View();
+           
         }
 
 

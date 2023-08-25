@@ -7,8 +7,45 @@ var connectionString = builder.Configuration.GetConnectionString("Vote_Applicati
 builder.Services.AddDbContext<Vote_Application_JonathanMutalaContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<Vote_Application_JonathanMutalaContext>();
+
+builder.Services.AddRazorPages();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Settings Password
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 2;
+    options.Password.RequiredUniqueChars = 0;
+
+    // Lockout settings.
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.AllowedForNewUsers = true;
+
+    // User settings.
+    options.User.AllowedUserNameCharacters =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+    options.User.RequireUniqueEmail = true;
+
+  
+
+});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    // Cookie settings
+     options.Cookie.HttpOnly = true;
+     options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+     options.LoginPath = "/Account/Login";
+    // options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+      options.SlidingExpiration = true;
+});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
