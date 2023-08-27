@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Vote_Application_JonathanMutala.Models;
 
 namespace Vote_Application_JonathanMutala.Data;
 
@@ -11,9 +12,15 @@ public class Vote_Application_JonathanMutalaContext : IdentityDbContext<Identity
     {
     }
 
+
+ 
+    public DbSet<Election> Elections { get; set; }
+    
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<Election>().ToTable("Election");
+
         // Customize the ASP.NET Identity model and override the defaults if needed.
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);

@@ -39,6 +39,7 @@ namespace Vote_Application_JonathanMutala.Controllers
         [HttpGet]
         public async Task<IActionResult> Login()
         {
+           
             return View();
         }
 
