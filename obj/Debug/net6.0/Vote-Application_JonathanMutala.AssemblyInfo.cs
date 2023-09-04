@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vote-Application_JonathanMutala")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c97c2c4a4e81de72b3ed959622184bb54726b6ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c49a9cbdb850554672225186c1a5e0f92170ca0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vote-Application_JonathanMutala")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vote-Application_JonathanMutala")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
