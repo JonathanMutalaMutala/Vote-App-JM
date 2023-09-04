@@ -564,3 +564,4 @@ C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\refint\Vote-Application
 C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\Vote-Application_JonathanMutala.pdb
 C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\Vote-Application_JonathanMutala.genruntimeconfig.cache
 C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\ref\Vote-Application_JonathanMutala.dll
+C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\Vote-Application_JonathanMutala.sourcelink.json
