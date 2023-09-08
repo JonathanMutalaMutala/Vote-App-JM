@@ -53,7 +53,7 @@ namespace Vote_Application_JonathanMutala.Controllers
             if (result.Succeeded)
             {
                 _logger.LogInformation("User logged in.");
-                //return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Election");
                 
             }
             
@@ -100,12 +100,6 @@ namespace Vote_Application_JonathanMutala.Controllers
                 await _signInManager.SignInAsync(userInfo, isPersistent: false);
                 return RedirectToAction("Index", "Home"); // Redirige ver la page de connexion 
             }
-
-            //foreach (var item in userResult.Errors)
-            //{
-            //    ModelState.AddModelError(string.Empty, item.Description);
-            //}
-
 
             return View();
            
