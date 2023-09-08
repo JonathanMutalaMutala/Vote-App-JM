@@ -53,5 +53,6 @@ namespace Vote_Application_JonathanMutala.Models
         /// </summary>
         public DateTime? EndDate { get; set; }
 
+        public bool IsActive { get; set; } 
     }
 }
