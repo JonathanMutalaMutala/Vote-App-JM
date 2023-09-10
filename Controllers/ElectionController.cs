@@ -18,7 +18,19 @@ namespace Vote_Application_JonathanMutala.Controllers
         private readonly IEmailSender _emailSender;
         private readonly Vote_Application_JonathanMutalaContext _context;
 
-
+        public ElectionController(SignInManager<IdentityUser> signInManager, ILogger<AccountController> logger,
+          UserManager<IdentityUser> userManager,
+          IUserStore<IdentityUser> userStore,
+          IEmailSender emailSender,
+          Vote_Application_JonathanMutalaContext context)
+        {
+            _signInManager = signInManager;
+            _logger = logger;
+            _userManager = userManager;
+            _userStore = userStore;
+            _emailSender = emailSender;
+            _context = context;
+        }
 
         // GET: ElectionController
         public ActionResult Index()
