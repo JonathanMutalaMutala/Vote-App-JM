@@ -18,6 +18,8 @@ namespace Vote_Application_JonathanMutala.Controllers
         private readonly IEmailSender _emailSender;
         private readonly Vote_Application_JonathanMutalaContext _context;
 
+
+
         // GET: ElectionController
         public ActionResult Index()
         {
