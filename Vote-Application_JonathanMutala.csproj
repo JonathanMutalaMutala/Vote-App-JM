@@ -23,4 +23,13 @@
     <Folder Include="Areas\Identity\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Ressources\Resource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Ressources\Resource.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

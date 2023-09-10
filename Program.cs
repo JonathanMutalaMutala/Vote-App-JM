@@ -45,7 +45,13 @@ builder.Services.ConfigureApplicationCookie(options =>
     // options.AccessDeniedPath = "/Identity/Account/AccessDenied";
       options.SlidingExpiration = true;
 });
-
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[] { "en-US", "fr-CA" };
+    options.SetDefaultCulture(supportedCultures[1])
+        .AddSupportedCultures(supportedCultures)
+        .AddSupportedUICultures(supportedCultures);
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

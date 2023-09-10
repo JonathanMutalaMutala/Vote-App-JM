@@ -17,6 +17,14 @@
         },
         "runtime": {
           "Vote-Application_JonathanMutala.dll": {}
+        },
+        "resources": {
+          "en/Vote-Application_JonathanMutala.resources.dll": {
+            "locale": "en"
+          },
+          "fr/Vote-Application_JonathanMutala.resources.dll": {
+            "locale": "fr"
+          }
         }
       },
       "Humanizer/2.14.1": {

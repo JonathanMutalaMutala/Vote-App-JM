@@ -543,3 +543,10 @@ C:\Users\jonat\Source\Repos\Vote-App-JM\bin\Debug\net6.0\vi\Humanizer.resources.
 C:\Users\jonat\Source\Repos\Vote-App-JM\bin\Debug\net6.0\zh-CN\Humanizer.resources.dll
 C:\Users\jonat\Source\Repos\Vote-App-JM\bin\Debug\net6.0\zh-Hans\Humanizer.resources.dll
 C:\Users\jonat\Source\Repos\Vote-App-JM\bin\Debug\net6.0\zh-Hant\Humanizer.resources.dll
+C:\Users\jonat\Source\Repos\Vote-App-JM\bin\Debug\net6.0\en\Vote-Application_JonathanMutala.resources.dll
+C:\Users\jonat\Source\Repos\Vote-App-JM\bin\Debug\net6.0\fr\Vote-Application_JonathanMutala.resources.dll
+C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\Vote_Application_JonathanMutala.Ressources.Resource.en.resources
+C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\Vote_Application_JonathanMutala.Ressources.Resource.fr.resources
+C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\Vote-Application_JonathanMutala.csproj.GenerateResource.cache
+C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\en\Vote-Application_JonathanMutala.resources.dll
+C:\Users\jonat\Source\Repos\Vote-App-JM\obj\Debug\net6.0\fr\Vote-Application_JonathanMutala.resources.dll

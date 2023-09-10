@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Vote_Application_JonathanMutala.Data;
+using System.Globalization;
 
 namespace Vote_Application_JonathanMutala.Controllers
 {
