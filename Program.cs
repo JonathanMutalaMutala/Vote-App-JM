@@ -15,6 +15,15 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 builder.Services.AddRazorPages();
 
+#region Session 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(40);
+    options.Cookie.HttpOnly = true;
+});
+#endregion
+
+
 #region Authentification Services
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -27,7 +36,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredUniqueChars = 0;
 
     // Lockout settings.
-   // options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(30);
     options.Lockout.MaxFailedAccessAttempts = 5;
     options.Lockout.AllowedForNewUsers = true;
 
