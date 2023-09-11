@@ -56,7 +56,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddMvc().AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix);
 
 builder.Services.AddLocalization( options =>
 {

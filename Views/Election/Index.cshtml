@@ -1,6 +1,8 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
 
-<h1>Election Page</h1>
+@inject IViewLocalizer _localizer; 
+
+<h1>@_localizer["Title"]</h1>
 
 <div style="display:flex; justify-content:end;">
     <div>

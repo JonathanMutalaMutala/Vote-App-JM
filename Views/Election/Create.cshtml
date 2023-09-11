@@ -1,3 +1,6 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
 
-<h1>Create an Election</h1>
+@inject IViewLocalizer _localizer;
+
+
+<h1>@_localizer["CreateTitle"]</h1>
