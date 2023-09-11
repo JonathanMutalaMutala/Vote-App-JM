@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Vote_Application_JonathanMutala.Data;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Vote_Application_JonathanMutalaContextConnection") ?? throw new InvalidOperationException("Connection string 'Vote_Application_JonathanMutalaContextConnection' not found.");
@@ -47,7 +48,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
-    var supportedCultures = new[] { "en-US", "fr-CA" };
+    var supportedCultures = new[] { "en", "fr" };
     options.SetDefaultCulture(supportedCultures[1])
         .AddSupportedCultures(supportedCultures)
         .AddSupportedUICultures(supportedCultures);
@@ -56,6 +57,11 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+builder.Services.AddLocalization( options =>
+{
+    options.ResourcesPath = "Ressources";
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -65,6 +71,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

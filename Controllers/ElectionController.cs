@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Vote_Application_JonathanMutala.Data;
 using System.Globalization;
+using Microsoft.Extensions.Localization;
 
 namespace Vote_Application_JonathanMutala.Controllers
 {
@@ -17,12 +18,13 @@ namespace Vote_Application_JonathanMutala.Controllers
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly IEmailSender _emailSender;
         private readonly Vote_Application_JonathanMutalaContext _context;
+        private readonly IStringLocalizer<ElectionController> _stringLocalizer;
 
         public ElectionController(SignInManager<IdentityUser> signInManager, ILogger<AccountController> logger,
           UserManager<IdentityUser> userManager,
           IUserStore<IdentityUser> userStore,
           IEmailSender emailSender,
-          Vote_Application_JonathanMutalaContext context)
+          Vote_Application_JonathanMutalaContext context,IStringLocalizer<ElectionController> stringLocalizer)
         {
             _signInManager = signInManager;
             _logger = logger;
@@ -30,6 +32,7 @@ namespace Vote_Application_JonathanMutala.Controllers
             _userStore = userStore;
             _emailSender = emailSender;
             _context = context;
+            _stringLocalizer = stringLocalizer;
         }
 
         // GET: ElectionController
@@ -47,6 +50,8 @@ namespace Vote_Application_JonathanMutala.Controllers
         // GET: ElectionController/Create
         public ActionResult Create()
         {
+            var x = _stringLocalizer["test"];
+
             return View();
         }
 

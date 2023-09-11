@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote-Application_JonathanMutala.csproj": {}
+    "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote_Application_JonathanMutala.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote-Application_JonathanMutala.csproj": {
+    "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote_Application_JonathanMutala.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote-Application_JonathanMutala.csproj",
-        "projectName": "Vote-Application_JonathanMutala",
-        "projectPath": "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote-Application_JonathanMutala.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote_Application_JonathanMutala.csproj",
+        "projectName": "Vote_Application_JonathanMutala",
+        "projectPath": "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote_Application_JonathanMutala.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\obj\\",
         "projectStyle": "PackageReference",

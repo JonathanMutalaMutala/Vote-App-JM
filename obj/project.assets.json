@@ -11245,11 +11245,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jonat\\Source\\Repos\\Vote-App-JM\\Vote-Application_JonathanMutala.csproj",
-      "projectName": "Vote-Application_JonathanMutala",
-      "projectPath": "C:\\Users\\jonat\\Source\\Repos\\Vote-App-JM\\Vote-Application_JonathanMutala.csproj",
+      "projectUniqueName": "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote_Application_JonathanMutala.csproj",
+      "projectName": "Vote_Application_JonathanMutala",
+      "projectPath": "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\Vote_Application_JonathanMutala.csproj",
       "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jonat\\Source\\Repos\\Vote-App-JM\\obj\\",
+      "outputPath": "C:\\Users\\jonat\\source\\repos\\Vote-App-JM\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",

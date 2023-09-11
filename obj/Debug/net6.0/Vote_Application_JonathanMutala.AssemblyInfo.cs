@@ -12,12 +12,12 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("Vote-Application_JonathanMutala")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Vote_Application_JonathanMutala")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63e4f125c8fc31481cd9339bfe7c35212f1c0ddc")]
-[assembly: System.Reflection.AssemblyProductAttribute("Vote-Application_JonathanMutala")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Vote-Application_JonathanMutala")]
+[assembly: System.Reflection.AssemblyProductAttribute("Vote_Application_JonathanMutala")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Vote_Application_JonathanMutala")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.
