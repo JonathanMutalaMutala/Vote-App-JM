@@ -61,13 +61,13 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.SlidingExpiration = true;
 });
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-        .AddCookie(options =>
-        {
-            options.ExpireTimeSpan = TimeSpan.FromMinutes(2);
-            options.LoginPath = "/Account/Login";
-            options.AccessDeniedPath = "/Auth/AccessDenied";
-        });
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//        .AddCookie(options =>
+//        {
+//            options.ExpireTimeSpan = TimeSpan.FromMinutes(2);
+//            options.LoginPath = "/Account/Login";
+//            options.AccessDeniedPath = "/Auth/AccessDenied";
+//        });
 #endregion
 
 #region Localization et globalization
