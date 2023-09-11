@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Vote_Application_JonathanMutala.Data;
 var builder = WebApplication.CreateBuilder(args);
+
+
 var connectionString = builder.Configuration.GetConnectionString("Vote_Application_JonathanMutalaContextConnection") ?? throw new InvalidOperationException("Connection string 'Vote_Application_JonathanMutalaContextConnection' not found.");
 
 builder.Services.AddDbContext<Vote_Application_JonathanMutalaContext>(options =>
@@ -13,6 +15,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 builder.Services.AddRazorPages();
 
+#region Authentification Services
 builder.Services.Configure<IdentityOptions>(options =>
 {
     // Settings Password
@@ -46,6 +49,9 @@ builder.Services.ConfigureApplicationCookie(options =>
     // options.AccessDeniedPath = "/Identity/Account/AccessDenied";
       options.SlidingExpiration = true;
 });
+#endregion
+
+#region Localization et globalization
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     var supportedCultures = new[] { "en", "fr" };
@@ -62,6 +68,8 @@ builder.Services.AddLocalization( options =>
 {
     options.ResourcesPath = "Resources";
 });
+#endregion
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
