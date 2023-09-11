@@ -60,7 +60,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddLocalization( options =>
 {
-    options.ResourcesPath = "Ressources";
+    options.ResourcesPath = "Resources";
 });
 var app = builder.Build();
 
