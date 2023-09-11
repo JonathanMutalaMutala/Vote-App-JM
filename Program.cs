@@ -1,7 +1,10 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Vote_Application_JonathanMutala.Data;
+using Vote_Application_JonathanMutala.Others_Class;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -51,13 +54,20 @@ builder.Services.Configure<IdentityOptions>(options =>
 builder.Services.ConfigureApplicationCookie(options =>
 {
     // Cookie settings
-     options.Cookie.HttpOnly = true;
-     options.ExpireTimeSpan = TimeSpan.FromMinutes(2);
-
-     options.LoginPath = "/Account/Login";
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+    options.LoginPath = "/Account/Login";
     // options.AccessDeniedPath = "/Identity/Account/AccessDenied";
-      options.SlidingExpiration = true;
+    options.SlidingExpiration = true;
 });
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options =>
+        {
+            options.ExpireTimeSpan = TimeSpan.FromMinutes(2);
+            options.LoginPath = "/Account/Login";
+            options.AccessDeniedPath = "/Auth/AccessDenied";
+        });
 #endregion
 
 #region Localization et globalization
@@ -90,7 +100,6 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -98,6 +107,7 @@ app.UseRouting();
 app.UseAuthentication();;
 
 app.UseAuthorization();
+app.UseMiddleware<LogoutMiddleware>();
 
 app.MapControllerRoute(
     name: "default",

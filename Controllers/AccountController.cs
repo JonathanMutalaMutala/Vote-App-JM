@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using Vote_Application_JonathanMutala.Data;
 using Vote_Application_JonathanMutala.Models;
 using Vote_Application_JonathanMutala.ViewModel;
@@ -52,7 +55,37 @@ namespace Vote_Application_JonathanMutala.Controllers
 
             if (result.Succeeded)
             {
-                _logger.LogInformation("User logged in.");
+                // _logger.LogInformation("User logged in.");
+                // Create claims
+                var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, currentUser.UserName),
+            new Claim(ClaimTypes.Email, currentUser.Email),
+            // Add other claims as needed
+        };
+
+                // Set claim expiration time (e.g., 30 minutes from now)
+                var expirationTime = DateTime.UtcNow.AddMinutes(2);
+
+                // Add a claim for expiration time
+                claims.Add(new Claim(ClaimTypes.Expiration, expirationTime.ToString("yyyy-MM-ddTHH:mm:ssZ")));
+
+                // Create claims identity
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                // Create authentication properties
+                var authProperties = new AuthenticationProperties
+                {
+                    AllowRefresh = true, // Allow the user to refresh their authentication session
+                    ExpiresUtc = expirationTime, // Set the expiration time for the authentication cookie
+                };
+
+                // Sign in the user with the new claims
+                await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(claimsIdentity),
+                    authProperties);
+
                 return RedirectToAction("Index", "Election");
                 
             }
@@ -64,14 +97,11 @@ namespace Vote_Application_JonathanMutala.Controllers
         public async Task<IActionResult> LogOut(string returnUrl = null)
         {
             await _signInManager.SignOutAsync();
-            if(returnUrl != null)
-            {
-                return LocalRedirect(returnUrl);
-            }
-            else
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            // Sign the user out
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return RedirectToAction("Login", "Account");
+         
         }
 
 
