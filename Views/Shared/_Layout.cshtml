@@ -28,16 +28,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        @{
-                            if (CultureInfo.CurrentCulture.Name.Contains("fr"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" >EN</a>
-                                </li>
-                            }
-                        }
-                       
-
+                       <li class="nav-link">
+                            <partial name="_SelectedLanguePartial" />
+                       </li>
                     </ul>
                 </div>
             </div>

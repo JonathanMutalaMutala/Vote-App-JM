@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using System.Globalization;
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+	static string GetTitleCaseNativeLanguage(CultureInfo culture)
+	{
+		string nativeName = culture.IsNeutralCulture
+			? culture.NativeName
+			: culture.Parent.NativeName;
+
+		return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nativeName);
+	}
+	var culture = Context.Features.Get<IRequestCultureFeature>();
+	var cultureLst = LocOptions.Value.SupportedUICultures
+		.Select(c => new SelectListItem { Value = c.Name, Text = GetTitleCaseNativeLanguage(c) })
+		.ToList();
+
+	string returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
+}
+
+<div>
+	<form asp-action="ChangeLanguage" asp-controller="Home" method="post" asp-route-returnUrl="@returnUrl">
+		<select name="culture" asp-for="@culture.RequestCulture.UICulture.Name" asp-items="cultureLst" onchange="this.form.submit();">
+
+		</select>
+	</form>
+</div>
