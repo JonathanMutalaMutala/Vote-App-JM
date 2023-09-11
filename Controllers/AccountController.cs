@@ -75,7 +75,7 @@ namespace Vote_Application_JonathanMutala.Controllers
         }
 
 
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Register()
         {
@@ -83,6 +83,7 @@ namespace Vote_Application_JonathanMutala.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Register(LoginViewModel loginViewModel)
         {
