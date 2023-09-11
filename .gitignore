@@ -52,3 +52,8 @@
 /bin/Debug/net6.0/Vote_Application_JonathanMutala.runtimeconfig.json
 /bin/Debug/net6.0/Vote_Application_JonathanMutala.staticwebassets.runtime.json
 *.css
+/obj/Debug/net6.0/Vote_Application_JonathanMutala.AssemblyInfo.cs
+/obj/Debug/net6.0/Vote_Application_JonathanMutala.AssemblyInfoInputs.cache
+/obj/Debug/net6.0/Vote_Application_JonathanMutala.csproj.GenerateResource.cache
+/obj/Debug/net6.0/Vote_Application_JonathanMutala.pdb
+/obj/Debug/net6.0/Vote_Application_JonathanMutala.sourcelink.json
