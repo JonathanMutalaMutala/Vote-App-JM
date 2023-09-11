@@ -85,7 +85,7 @@ namespace Vote_Application_JonathanMutala.Controllers
                 //    CookieAuthenticationDefaults.AuthenticationScheme,
                 //    new ClaimsPrincipal(claimsIdentity),
                 //    authProperties);
-
+                
                 return RedirectToAction("Index", "Election");
                 
             }
