@@ -21,7 +21,7 @@ builder.Services.AddRazorPages();
 #region Session 
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromSeconds(40);
+    options.IdleTimeout = TimeSpan.FromMinutes(10);
     options.Cookie.HttpOnly = true;
 });
 #endregion
@@ -39,7 +39,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredUniqueChars = 0;
 
     // Lockout settings.
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(30);
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
     options.Lockout.MaxFailedAccessAttempts = 5;
     options.Lockout.AllowedForNewUsers = true;
 
@@ -51,23 +51,18 @@ builder.Services.Configure<IdentityOptions>(options =>
   
 
 });
+
+//Cookie d'authenitification 
 builder.Services.ConfigureApplicationCookie(options =>
 {
     // Cookie settings
     options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
     options.LoginPath = "/Account/Login";
-    // options.AccessDeniedPath = "/Identity/Account/AccessDenied";
     options.SlidingExpiration = true;
+    
 });
 
-//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-//        .AddCookie(options =>
-//        {
-//            options.ExpireTimeSpan = TimeSpan.FromMinutes(2);
-//            options.LoginPath = "/Account/Login";
-//            options.AccessDeniedPath = "/Auth/AccessDenied";
-//        });
 #endregion
 
 #region Localization et globalization
@@ -100,6 +95,7 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

@@ -24,22 +24,12 @@ namespace Vote_Application_JonathanMutala.Others_Class
         {
             var x = signInManager;
             var a = UserManager;
-
+            //var x = httpContext.Session.
             if (signInManager.Context.User.Identity.IsAuthenticated)
             {
-                var authenticationExpires = httpContext.User.FindFirstValue(ClaimTypes.Expiration);
-
-                if (!string.IsNullOrEmpty(authenticationExpires))
-                    
+                if (!signInManager.Context.Session.IsAvailable)
                 {
-                    var expires = Convert.ToDateTime(authenticationExpires);
-                    if (expires < DateTime.Now)
-                    {
-                        await signInManager.SignOutAsync();
-                        await httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-                         httpContext.Response.Redirect("/Account/Login");
-                        return;
-                    }
+                    await signInManager.SignOutAsync();
                 }
             }
             await _next(httpContext);

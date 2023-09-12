@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using Vote_Application_JonathanMutala.Data;
 using System.Globalization;
 using Microsoft.Extensions.Localization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Vote_Application_JonathanMutala.Controllers
 {
+    [Authorize]
     public class ElectionController : Controller
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -51,6 +53,8 @@ namespace Vote_Application_JonathanMutala.Controllers
         public ActionResult Create()
         {
             var x = _stringLocalizer["test"];
+
+            var s = HttpContext;
 
             return View();
         }
