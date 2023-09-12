@@ -1,6 +1,63 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization;
-
 @inject IViewLocalizer _localizer;
 
 
-<h1>@_localizer["CreateTitle"]</h1>
+<div class="container-create">
+   
+    <div class="container">
+        <div>
+            <h1>@_localizer["CreateTitle"]</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-floating mb-2">
+                    <input class="form-control" aria-required="true" />
+                    <label class="form-label">@_localizer["Name"]</label>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-floating mb-2">
+                    <input class="form-control" aria-required="true" />
+                    <label class="form-label">@_localizer["Name"]</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-floating mb-2">
+                    <input class="form-control" aria-required="true" />
+                    <label class="form-label">@_localizer["Name"]</label>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-floating mb-2">
+                    <input class="form-control" aria-required="true" />
+                    <label class="form-label">@_localizer["Name"]</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-floating mb-2">
+                    <input class="form-control" aria-required="true" />
+                    <label class="form-label">@_localizer["Name"]</label>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-floating mb-2">
+                    <input class="form-control" aria-required="true" />
+                    <label class="form-label">@_localizer["Name"]</label>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<style>
+   /*  .container-create{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    } */
+</style>
