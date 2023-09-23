@@ -69,3 +69,4 @@
 /obj/project.nuget.cache
 /obj/Vote_Application_JonathanMutala.csproj.nuget.dgspec.json
 /obj/Vote_Application_JonathanMutala.csproj.nuget.g.props
+*.resources
