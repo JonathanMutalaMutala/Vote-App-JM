@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Vote_Application_JonathanMutala.Models
 {
@@ -25,7 +26,8 @@ namespace Vote_Application_JonathanMutala.Models
         /// Représente la clé étrangère 
         /// </summary>
         public int OrgId { get; set; }
-
+        [ForeignKey("OrgId")]
+        public Organization Organization { get; set; }
         /// <summary>
         /// Représente le pays de l'élection
         /// </summary>
