@@ -13,7 +13,7 @@ namespace Vote_Application_JonathanMutala.Models
         public string Name { get; set; }
 
         [StringLength(50)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
       
         public bool IsInProgress { get; set; }
@@ -25,9 +25,11 @@ namespace Vote_Application_JonathanMutala.Models
         /// <summary>
         /// Représente la clé étrangère 
         /// </summary>
-        public int OrgId { get; set; }
+        public int? OrgId { get; set; }
+
         [ForeignKey("OrgId")]
-        public Organization Organization { get; set; }
+        public Organization? Organization { get; set; }
+
         /// <summary>
         /// Représente le pays de l'élection
         /// </summary>
