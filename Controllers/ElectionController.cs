@@ -10,6 +10,7 @@ using System.Diagnostics.Metrics;
 using System.Text.Json;
 using Vote_Application_JonathanMutala.Others_Class;
 using Newtonsoft.Json;
+using Vote_Application_JonathanMutala.ViewModel;
 
 namespace Vote_Application_JonathanMutala.Controllers
 {
@@ -57,7 +58,9 @@ namespace Vote_Application_JonathanMutala.Controllers
         public ActionResult Create()
         {
             var countriesJson = System.IO.File.ReadAllText($"Data/json-country_en.json");
-            var countries = JsonConvert.DeserializeObject<List<Country>>(countriesJson);
+            var countries = System.Text.Json.JsonSerializer.Deserialize<List<Country>>(countriesJson);
+
+           ViewBag.Countries = countries;
 
             return View();
         }
