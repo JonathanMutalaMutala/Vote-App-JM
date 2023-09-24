@@ -15,10 +15,11 @@ namespace Vote_Application_JonathanMutala.Models
         public string Description { get; set; }
 
       
-        /// <summary>
-        /// Représente l'Id du status  
-        /// </summary>
-        public int StatusId { get; set; }
+        public bool IsInProgress { get; set; }
+
+        public bool IsOnCreate { get; set; } 
+
+        public bool IsClose { get; set; } 
 
         /// <summary>
         /// Représente la clé étrangère 
