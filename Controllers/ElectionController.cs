@@ -6,6 +6,10 @@ using Vote_Application_JonathanMutala.Data;
 using System.Globalization;
 using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Authorization;
+using System.Diagnostics.Metrics;
+using System.Text.Json;
+using Vote_Application_JonathanMutala.Others_Class;
+using Newtonsoft.Json;
 
 namespace Vote_Application_JonathanMutala.Controllers
 {
@@ -52,9 +56,8 @@ namespace Vote_Application_JonathanMutala.Controllers
         // GET: ElectionController/Create
         public ActionResult Create()
         {
-            var x = _stringLocalizer["test"];
-
-            var s = HttpContext;
+            var countriesJson = System.IO.File.ReadAllText($"Data/json-country_en.json");
+            var countries = JsonConvert.DeserializeObject<List<Country>>(countriesJson);
 
             return View();
         }
