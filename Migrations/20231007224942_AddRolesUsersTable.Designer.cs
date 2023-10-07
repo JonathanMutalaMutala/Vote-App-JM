@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Vote_Application_JonathanMutala.Data;
 
@@ -11,9 +12,10 @@ using Vote_Application_JonathanMutala.Data;
 namespace Vote_Application_JonathanMutala.Migrations
 {
     [DbContext(typeof(Vote_Application_JonathanMutalaContext))]
-    partial class Vote_Application_JonathanMutalaContextModelSnapshot : ModelSnapshot
+    [Migration("20231007224942_AddRolesUsersTable")]
+    partial class AddRolesUsersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
