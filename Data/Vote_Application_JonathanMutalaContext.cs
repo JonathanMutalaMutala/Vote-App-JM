@@ -5,7 +5,7 @@ using Vote_Application_JonathanMutala.Models;
 
 namespace Vote_Application_JonathanMutala.Data;
 
-public class Vote_Application_JonathanMutalaContext : IdentityDbContext<IdentityUser>
+public class Vote_Application_JonathanMutalaContext : IdentityDbContext<User,Role,string>
 {
     public Vote_Application_JonathanMutalaContext(DbContextOptions<Vote_Application_JonathanMutalaContext> options)
         : base(options)
@@ -15,7 +15,7 @@ public class Vote_Application_JonathanMutalaContext : IdentityDbContext<Identity
 
  
     public DbSet<Election> Elections { get; set; }
-    public DbSet<Roles> Roles { get; set; }
+    public DbSet<Role> Roles { get; set; }
     
     protected override void OnModelCreating(ModelBuilder builder)
     {

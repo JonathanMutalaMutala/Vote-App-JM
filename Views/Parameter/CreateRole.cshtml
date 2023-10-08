@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IViewLocalizer _localizer;
+
+
+@model Role 
+
+<form asp-action="CreateRole" asp-controller="Parameter" method="post">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-floating mb-2">
+                <input class="form-control" aria-required="true" asp-for="Name" />
+                <label class="form-label">@_localizer["Name"]</label>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-floating mb-2">
+                <textarea class="form-control" aria-required="true" asp-for="Description"></textarea>
+                <label class="form-label">@_localizer["Description"]</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <button type="submit" class="btn btn-outline-primary">Ajouter un Role</button>
+        </div>
+    </div>
+</form>
