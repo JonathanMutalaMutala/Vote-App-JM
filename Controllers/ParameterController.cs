@@ -20,6 +20,10 @@ namespace Vote_Application_JonathanMutala.Controllers
         public IActionResult ManageRole()
         {
             List<Role> lstRoles = new List<Role>();
+
+            lstRoles = _context.Roles.ToList(); // Getting All Role
+
+
             return View(lstRoles);
         }
         [HttpGet]
@@ -31,18 +35,18 @@ namespace Vote_Application_JonathanMutala.Controllers
         [HttpPost]
         public IActionResult CreateRole(Role AddedRole)
         {
-            //Role roles = new Role
-            //{
-            //    Description = AddedRole.Description,
-            //    Name = AddedRole.Name,  
+            Role roles = new Role
+            {
+                Description = AddedRole.Description,
+                Name = AddedRole.Name,
 
-            //};
-           
+            };
 
-            //_context.Add(roles);
 
-            //_context.SaveChanges(); 
-            
+            _context.Add(roles);
+
+            _context.SaveChanges(); 
+
             return RedirectToAction("ManageRole");
         }
 
