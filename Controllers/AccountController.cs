@@ -24,7 +24,6 @@ namespace Vote_Application_JonathanMutala.Controllers
         private readonly IEmailSender _emailSender;
         private readonly Vote_Application_JonathanMutalaContext _context;
 
-        private ISession _session { get; set; }
         public AccountController(SignInManager<IdentityUser> signInManager, ILogger<AccountController> logger,
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
