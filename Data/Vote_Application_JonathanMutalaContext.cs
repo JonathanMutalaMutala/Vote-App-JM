@@ -16,6 +16,7 @@ public class Vote_Application_JonathanMutalaContext : IdentityDbContext<User,Rol
  
     public DbSet<Election> Elections { get; set; }
     public DbSet<Role> Roles { get; set; }
+    public DbSet<User> Users { get; set; }
     
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -49,15 +49,20 @@ namespace Vote_Application_JonathanMutala.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginViewModel )
         {
-            IdentityUser currentUser = await _userManager.FindByEmailAsync( loginViewModel.Email );
+            // Get User who want to Login 
+            IdentityUser?  identityUser = _context.Users.Where(x => x.Email.Equals(loginViewModel.Email)).FirstOrDefault();
 
-            var result = await _signInManager.PasswordSignInAsync(currentUser, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: true);
-
-            if (result.Succeeded)
+            if(identityUser != null)
             {
-                return RedirectToAction("Index", "Election");
-                
+                Microsoft.AspNetCore.Identity.SignInResult? result = await _signInManager.PasswordSignInAsync(identityUser, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: true);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Election");
+
+                }
             }
+           
             
             return View(loginViewModel);
         }
