@@ -6,9 +6,6 @@ namespace Vote_Application_JonathanMutala.Models
     public class Role : IdentityRole
     {
        
-
         public string? Description { get; set; }
-
-
     }
 }
